@@ -13,6 +13,7 @@ import { observeIntersection } from '../helpers/observe-intersection';
 // Store
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { loadLocationsAsync } from '../store/locationsSlice';
+import { Typography } from '@mui/material';
 
 function Locations(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -56,6 +57,10 @@ function Locations(): JSX.Element {
 
   return (
     <div className="container">
+      <div className="header">
+        <Typography variant="h4">Locations</Typography>
+      </div>
+
       {locations.map((item: Location) => (
         <LocationCard key={item.locationId} item={item}></LocationCard>
       ))}
