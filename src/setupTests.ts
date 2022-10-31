@@ -4,11 +4,13 @@
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom/extend-expect';
 
-const intersectionObserverMock = () => ({
-  observe: () => null,
-  disconnect: () => null,
-});
+beforeEach(() => {
+  const intersectionObserverMock = () => ({
+    observe: () => null,
+    disconnect: () => null,
+  });
 
-window.IntersectionObserver = jest
-  .fn()
-  .mockImplementation(intersectionObserverMock);
+  window.IntersectionObserver = jest
+    .fn()
+    .mockImplementation(intersectionObserverMock);
+});

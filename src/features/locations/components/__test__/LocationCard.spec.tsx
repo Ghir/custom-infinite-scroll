@@ -1,26 +1,11 @@
-import { render, unmountComponentAtNode } from 'react-dom';
-import { act } from 'react-dom/test-utils';
+import { render } from '@testing-library/react';
 
 import { locationMock } from '../../mocks/location.mock';
 
 import LocationCard from '../LocationCard';
 
-let container: any = null;
-
-beforeEach(() => {
-  container = document.createElement('div');
-  document.body.appendChild(container);
-});
-
-afterEach(() => {
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
-});
-
 it('renders location data', () => {
-  act(() => {
-    render(<LocationCard item={locationMock} />, container);
-  });
+  const { container } = render(<LocationCard item={locationMock} />);
+
   expect(container.textContent).toContain(locationMock.address.addressLine1);
 });

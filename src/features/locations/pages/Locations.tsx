@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import { Typography } from '@mui/material';
+
 // Style
 import './Locations.css';
 
@@ -8,12 +10,13 @@ import { Location } from '../models/location.model';
 
 // Components
 import LocationCard from '../components/LocationCard';
+
+// Helpers
 import { observeIntersection } from '../helpers/observe-intersection';
 
 // Store
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { loadLocationsAsync } from '../store/locationsSlice';
-import { Typography } from '@mui/material';
 
 function Locations(): JSX.Element {
   const dispatch = useAppDispatch();

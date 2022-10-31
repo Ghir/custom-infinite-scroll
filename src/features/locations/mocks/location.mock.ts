@@ -1,4 +1,6 @@
-export const locationMock = {
+import { Location } from '../models/location.model';
+
+export const locationMock: Location = {
   locationId: 'ABBB0C49',
   locationName: 'Airbnb - Mountains',
   locationDetails: '',
